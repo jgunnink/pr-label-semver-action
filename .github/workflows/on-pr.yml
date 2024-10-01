@@ -25,7 +25,7 @@ jobs:
       - name: Setup Project
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "20"
           cache: npm
           cache-dependency-path: package-lock.json
 
@@ -51,12 +51,12 @@ jobs:
 
   publish-version:
     if: |
-      github.event.pull_request.merged && 
-      github.event.pull_request.base.ref == 'main' && 
+      github.event.pull_request.merged &&
+      github.event.pull_request.base.ref == 'main' &&
       (
         contains(github.event.pull_request.labels.*.name, 'sv:patch') ||
         contains(github.event.pull_request.labels.*.name, 'sv:minor') ||
-        contains(github.event.pull_request.labels.*.name, 'sv:major') 
+        contains(github.event.pull_request.labels.*.name, 'sv:major')
       )
     needs: check-code
     runs-on: ubuntu-latest
