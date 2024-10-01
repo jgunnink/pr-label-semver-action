@@ -38,7 +38,7 @@ jobs:
 
       - name: Generate Semantic Version
         id: semver
-        uses: rapidstack/PR-Label-Semver-Action@v1
+        uses: jgunnink/PR-Label-Semver-Action@1.4.0
 
       - name: Create Git Tag
         uses: actions/github-script@v5
@@ -93,7 +93,7 @@ The action will output the following variables that can be used in subsequent st
 ```yaml
 - name: Generate Semantic Version
   id: semver
-  uses: rapidstack/pr-label-semver-action@v1
+  uses: jgunnink/pr-label-semver-action@1.4.0
 
 - name: Create Git Tag
   uses: something/else
