@@ -1,6 +1,6 @@
-name: "PR Label Semver Action"
-description: "Generates a semver change by looking at set labels on a PR."
-author: "rapidstack"
+name: "Semantic versioning bumper"
+description: "Generates a semantic version change by looking at set labels on a PR."
+author: JK Gunnink # Forked from github.com/rapidstack/pr-label-semver-action
 branding:
   icon: "tag"
   color: "green"
@@ -19,5 +19,5 @@ inputs:
     description: "GitHub token to use for operations."
     default: ${{ github.token }}
 runs:
-  using: "node16"
+  using: "node20"
   main: "dist/index.js"
